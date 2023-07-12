@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="c_release_notes_2021_9_0">
+    <title>Coverity on Polaris 2023.6.0 Release Notes</title>
+    <abstract>     <note><b>This platform is renamed Coverity on Polaris.</b> Unless otherwise specified, references to Polaris or Polaris Software Integrity Platform in this documentation are referring to Coverity on Polaris.</note> <shortdesc>Here's what's new in Coverity on Polaris 2023.6.0.</shortdesc></abstract>
+    <prolog>
+        <metadata>
+            <othermeta name="product" content="Coverity on Polaris"/>
+        </metadata>
+    </prolog>
+    <conbody>
+        <section id="polarisx">
+            <title>Platform </title>
+            <ul id="ul_lbp_w5n_qqb">
+                <li><b>Coverity 2022.6.1 and 2022.6.0 are no longer supported.</b></li>
+                <li><b>Support for Coverity 2022.3.0 is deprecated. It will be discontinued in a
+                        future release.</b></li>
+                <li>Coverity on Polaris supports Coverity Versions: <ul id="ul_hzl_swq_dvb">
+                        <li>2023.6.0 (Recommended)</li>
+                        <li>2023.3.3</li>
+                        <li>2023.3.0 (Deprecated)</li>
+                        <li>2022.12.0 </li>
+                        <li>2022.9.2</li>
+                    </ul></li>
+                <li><b>Coverity on Polaris now supports Coverity 2023.6.0.</b> See <xref
+                        href="r_coverity-compatible-platforms_2023.6.dita" scope="local">Coverity
+                        2023.3.0: Supported Platforms, Languages, and Compilers</xref>. It includes
+                    the following changes:<ul id="ul_h2n_45x_drb">
+                        <li>Support for Go 1.18 has been removed.</li>
+                        <li>Support for LLVM Clang 6.0 has been removed.</li>
+                        <li>Support for FSF GCC 4.0 has been removed.</li>
+                        <li>Support for Xcode 11 has been removed with Clang capture on macOS on Intel.  To ensure a complete Clang capture on macOS on Intel, Xcode 12-13 must be installed.
+                        
+                        </li>
+                        <li>Support for GNU gcc and g++versions 4.0 has been removed.
+                        </li>
+                        <li>Support for macOS 11 is deprecated and will be removed in a future
+                            release.</li>
+                        <li>Support for Go 1.19 is deprecated and will be removed in a
+                            future release.</li>
+                        <li>Support for LLVM Clang 7.0 is deprecated and will be removed in
+                            a future release.</li>
+                                <li> Support for GNU gcc and g++ versions prior to and including
+                                    4.7.0 is deprecated and will be removed in a future
+                                    release.</li>
+                                <li>Added support for Go 1.20.</li>
+                                <li>Added partial support for Java 20. Methods using Java 20
+                                    features will be tolerated but not emitted.</li>
+                                <li>Added support for LLVM Clang 16.0 C/C++ compiler.</li>
+                                <li>Coverity Analysis for C# and Visual Basic supports analysis of
+                                    programs compiled by the Visual C# compiler
+                                        (<codeph>csc.exe</codeph>) and Visual Basic compiler
+                                        (<codeph>vbc.exe</codeph>) from .NET Framework versions 3.5
+                                    SP1 and 4.5.2–4.8.</li>
+                                <li>Improved performance of JavaScript webapp security
+                                    analysis.</li>
+                    </ul></li>
+                <li>From MacO 13 onward, it is required that the XCodeBuild application must
+                            be installed to run build capture.</li>
+                <li>Although Coverty supports Linux ARM is not supported with Coverity on Polaris
+                    2023.6.0. Support will be introduced in a feature release. </li>
+                        <li>Synopsys Software Integrity Group documentation including <xref
+                                href="https://sig-product-docs.synopsys.com/bundle/coverity-on-polaris/page/m_overview.html"
+                                format="html" scope="external">Coverity on Polaris</xref> is now in
+                            our <xref href="https://sig-product-docs.synopsys.com/" format="html"
+                                scope="external">Documentation Portal</xref>.</li>
+                        <li>Bug Fix: The Coverity on Polaris UI and documentation has been corrected
+                    to state that after enabling the SAML it could override any groups created in
+                    the UI <b>(POL-15834)</b>.</li>
+                    </ul>
+                
+                   
+            
+        </section>
+        <section id="cli">
+            <title>CLI </title>
+            <ul id="ul_azt_hdy_p4b">
+                <li>The following <b>versions of the Coverity on Polaris CLI Scan Client</b> are
+                        <b>supported</b> in this release<b>:</b>
+                
+                
+                    <ul id="ul_hj4_bzj_byb">
+                        <li>2023.6.0 (Recommended)</li>
+                        <li>2023.3.3</li>
+                        <li>2023.3.0 (Deprecated)</li>
+                        <li>2022.12.0 </li>
+                        <li>2022.9.2</li>
+                    </ul>
+                
+                    </li>
+            </ul>
+        </section>
+        <section id="section_s1f_sbj_gnb">
+            <title>API</title>
+            <p>
+                <ul id="ul_nk2_rzj_byb">
+                    <li>Support for Auth Service V0 and V1 APIs is deprecated and will be removed in
+                        an upcoming release. It is recommended to update all Auth Service APIs to
+                        V2. The list of Auth Service APIs can be found in the API Reference
+                        documentation.</li>
+                    <li>GET APIs will no longer include last login/last access token attributes
+                            <b>(POLSAAS-3831)</b>.<ul id="ul_ok2_rzj_byb">
+                            <li>The <b>GET /api/auth/v2/users/{id}</b> (The GET user by ID API) will
+                                retain the last-login related info (last-login-date and
+                                access-token-last-used-date).</li>
+                            <li>The <b>GET /api/auth/v2/users</b> (The GET users with optional
+                                filter criteria) and the <b>GET /api/auth/v2/users/{id1, id2,
+                                    id3,...idn}</b> (The GET users by IDs) will NOT retain the
+                                last-login related info</li>
+                        </ul></li>
+                    <li>Bug Fix: Coverity on Polaris API allows creation Invalid role assignments
+                            <b>(POL-15741)</b>.</li>
+                </ul>
+            </p>
+        </section>
+    </conbody>
+</concept>

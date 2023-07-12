@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r_coverity_compatible_platforms_2022_9">
+    <title>Coverity 2023.6.0: Supported Platforms, Languages, and Compilers</title>
+    <abstract>     <note><b>This platform is renamed Coverity on Polaris.</b> Unless otherwise specified, references to Polaris or Polaris Software Integrity Platform in this documentation are referring to Coverity on Polaris.</note> <shortdesc></shortdesc></abstract>
+    <prolog>
+        <metadata>
+            <othermeta name="product" content="Coverity on Polaris"/>
+        </metadata>
+    </prolog>
+    <refbody>
+        <section id="section_introduction_2022-03">
+            <title>Introduction</title>
+        </section>
+        <section id="section_platforms_2022-03">
+            <title>Platform Support for Coverity on Polaris</title>
+        </section>
+        <example id="example_gxc_1r2_2vb">
+            <p>This support information applies to the installation of Coverity on Polaris CLI
+                Client and Coverity Analysis.</p>
+        </example>
+        <section id="section_kcc_1r2_2vb">
+            <table id="table_gzz_pmy_b4bz" frame="all">
+                <title><b>Platforms Supported</b></title>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Version</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>64-bit kernel, version 2.6.32+ with glibc 2.18 or later</entry>
+                            <entry>
+                                <p><b>Linux Platform Support Notes</b></p>
+                                <ul id="ul_hzz_pmy_ccb">
+                                    <li>Debian GNU/kFreeBSD is not supported.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>macOS</entry>
+                            <entry>OSX 11, 12, 13</entry>
+                            <entry>
+                                <ul id="ul_ukm_wh4_15b">
+                                    <li>macOS 12 and 13 on Apple Silicon.<ul id="ul_ccv_1mg_cvb">
+                                            <li>Running Sigma on ARM-based Mac machines is not
+                                                supported.</li>
+                                            <li>Build capture is not currently supported.</li>
+                                            <li>With Coverity 2023.3.3, MacOS ARM (Apple Silicon)
+                                                kits are available (supported with buildless capture
+                                                only).</li>
+                                        </ul></li>
+                                    <li>Support for macOS 11 is deprecated as of 2023.6.0 and will
+                                        be removed in a future release.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>x86_64, Version 10 and 11 and Windows Server 2019 and
+                                2022</entry>
+                            <entry>
+                                <p><b>Windows Platform Support Notes</b></p>
+                                <ul id="ul_jzz_pmy_cc">
+                                    <li>Coverity Analysis for C# and Visual Basic supports analysis
+                                        of programs compiled by the Visual C# compiler (csc.exe) and
+                                        Visual Basic compiler (vbc.exe) from .NET Framework versions
+                                        3.5 SP1 and 4.5.2–4.8.</li>
+                                    <li>Coverity Analysis is not supported on 'Server Core'
+                                        installations at this time.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <note id="note_fbt_334_15b">When performing Java code analysis, Coverity requires Oracle
+                Java SE Runtime Environment 8 (JRE-8) as its executable platform. This requirement
+                is unrelated to your choice of Java compiler.</note>
+        </section>
+        <section id="section_language_support_2022-03">
+            <title>Language Support for Coverity on Polaris</title>
+            <table id="table_kzz_pmy_b4b" frame="all">
+                <title><b>Language Support</b></title>
+                <desc>This table describes languages supported for Coverity on Polaris and Coverity
+                    capture modes available for each language. Support might differ from standard
+                    Coverity.</desc>
+                <tgroup cols="5">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="4" colname="col4" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="5" colname="col5" colsep="1" rowsep="1" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Language</entry>
+                            <entry>Capture mode</entry>
+                            <entry>OS</entry>
+                            <entry>Versions</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Apex</entry>
+                            <entry>
+                                <ul id="ul_esj_w34_15b">
+                                    <li>Buildless capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry/>
+                            <entry>Coverity supports the execution of PMD analysis (through Coverity
+                                Analysis for Apex) and requires Oracle Java SE Runtime Environment 8
+                                (JRE 8) platform support.</entry>
+                        </row>
+                        <row>
+                            <entry>C/C++</entry>
+                            <entry>
+                                <ul id="ul_r1y_n1f_c4b">
+                                    <li>Build capture (See compiler support table below. Build
+                                        capture requires that your project use a compiler version
+                                        which is supported by Polaris.)</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>
+                                <ul id="ul_opj_lrs_bsb">
+                                    <li>C++20</li>
+                                    <li>C++98</li>
+                                    <li>C++03</li>
+                                    <li>C++11</li>
+                                    <li>C++14</li>
+                                    <li>C++17</li>
+                                    <li>C89</li>
+                                    <li>C99</li>
+                                    <li>C11     </li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <ul id="ul_ttt_bzv_xvb">
+                                    <li>Support for C++20 is provisional.</li>
+                                    <li>Compliance analysis is available with all C/C++ analysis
+                                        platforms except AIX.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>C#</entry>
+                            <entry>
+                                <ul id="ul_lzz_pmy_b4b">
+                                    <li>Build capture (See compiler support table below. Build
+                                        capture requires that your project use a compiler version
+                                        which is supported by Polaris.)</li>
+                                    <li>Buildless capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>Up to C# 11</entry>
+                            <entry>
+                                <ul>
+                                    <li>Less than 5 percent churn is expected for build
+                                        capture.</li>
+                                    <li>For C#, buildless capture is only supported on Windows and
+                                        for projects that make use of .NET Core (.NET SDK).</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Objective-C</entry>
+                            <entry>
+                                <ul id="ul_msj_41f_c4b">
+                                    <li>Build capture (See compiler support table below. Build
+                                        capture requires that your project use a compiler version
+                                        which is supported by Polaris.)</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>NA</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Go</entry>
+                            <entry>
+                                <ul id="ul_mxs_41f_c4b">
+                                    <li>Build capture (See compiler support table below. Build
+                                        capture requires that your project use a compiler version
+                                        which is supported by Polaris.)</li>
+                                    <li>Buildless capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>Go 1.19–1.20</entry>
+                            <entry>
+                                <ul id="ul_lfw_zm5_wwb">
+                                    <li><b>Deprecation Notice</b>: Support for Go 1.19 is deprecated
+                                        as of 2023.6.0 and will be removed in a future release.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Java</entry>
+                            <entry>
+                                <ul id="ul_mzz_pmy_b4b">
+                                    <li>Build capture (See compiler support table below. Build
+                                        capture requires that your project use a compiler version
+                                        which is supported by Polaris.)</li>
+                                    <li>Buildless capture</li>
+                                    <li>Filesystem capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>Up to Java 19</entry>
+                            <entry>
+                                <ul>
+                                    <li>Less than 5 percent churn is expected for build
+                                        capture.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>JavaScript</entry>
+                            <entry>
+                                <ul id="ul_nzz_pmy_b4b">
+                                    <li>Buildless capture</li>
+                                    <li>Filesystem capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>ECMAScript 5–12</entry>
+                            <entry>
+                                <ul id="ul_l5r_pry_b4b">
+                                    <li>ECMAScript 12 is also known as ECMAScript 2021.</li>
+                                    <li>Coverity supports the execution of JSHint analyses (through
+                                        Coverity Analysis for JavaScript) on platforms supported by
+                                        Node.js 14.12.0.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Kotlin</entry>
+                            <entry>
+                                <ul id="ul_kgc_p1f_c4b">
+                                    <li>Build capture (See compiler support table below. Build
+                                        capture requires that your project use a compiler version
+                                        which is supported by Polaris.)</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>Kotlin 1.7.0-1.7.20, 1.8.0</entry>
+                            <entry>
+                                <ul id="ul_mv3_tsd_dvb">
+                                    <li>Coverity supports the execution of Detekt analysis (through
+                                        Coverity Analysis for Kotlin) and requires Oracle Java SE
+                                        Runtime Environment 8 (JRE 8) platform support.</li>
+                                    <li><b>Deprecation Notice</b>: Support for Kotlin 1.7 has been
+                                        deprecated as of 2023.3.0 and will be removed in a future
+                                        release.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>PHP</entry>
+                            <entry>
+                                <ul id="ul_ozz_pmy_b4b">
+                                    <li>Buildless capture</li>
+                                    <li>Filesystem capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>PHP 7.0.0</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Python</entry>
+                            <entry>
+                                <ul id="ul_pzz_pmy_b4b">
+                                    <li>Buildless capture</li>
+                                    <li>Filesystem capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>Python 3.x– 3.10</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Ruby</entry>
+                            <entry>
+                                <ul id="ul_qzz_pmy_b4b">
+                                    <li>Buildless capture</li>
+                                    <li>Filesystem capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>Matz's Reference Impl. (MRI) 1.9.2–2.6 and equivalents</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Rapid Scan Static (Sigma-based) analysis</entry>
+                            <entry/>
+                            <entry/>
+                            <entry/>
+                            <entry>Coverity invokes the Rapid Scan Static (Sigma) engine on
+                                supported platforms, to gain additional language, file format and
+                                software issue capabilities.</entry>
+                        </row>
+                        <row>
+                            <entry>Swift</entry>
+                            <entry>
+                                <ul id="ul_qzz_z2y_b4b">
+                                    <li>Build capture (See compiler support table below)</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>macOS</entry>
+                            <entry>Up to 5.7</entry>
+                            <entry>Swift support is gained via the Rapid Scan Static (Sigma)
+                                engine.</entry>
+                        </row>
+                        <row>
+                            <entry>Typescript</entry>
+                            <entry>
+                                <ul id="ul_qzz_z2y_b55">
+                                    <li>Buildless capture</li>
+                                    <li>Filesystem capture</li>
+                                    <li>Autocapture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                                <p>macOS</p>
+                                <p>Linux</p>
+                            </entry>
+                            <entry>TypeScript 1.0–4.9</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Visual Basic</entry>
+                            <entry>
+                                <ul id="ul_tjj_3ss_bsb">
+                                    <li>Build capture</li>
+                                </ul>
+                            </entry>
+                            <entry>
+                                <p>Windows</p>
+                            </entry>
+                            <entry>Up to Visual Basic 16</entry>
+                            <entry/>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section id="section_sigma">
+            <title>IaC Platform and File Format Support</title>
+            <p>Infrastructure as Code (IaC) support uses autocapture in Coverity on Polaris to
+                detect security flaws in your infrastructure code in the following platforms and
+                file formats.</p>
+            <p><b>Platforms</b><ul id="ul_zcg_g1t_gtb">
+                    <li>AWS CloudFormation</li>
+                    <li>Kubernetes</li>
+                    <li>Terraform</li>
+                </ul></p>
+            <p><b>Formats</b><ul id="ul_clp_j1t_gtb">
+                    <li>HCL (Terraform)</li>
+                    <li>JSON</li>
+                    <li>XML</li>
+                    <li>YAML</li>
+                </ul></p>
+        </section>
+        <section id="section_compilers_bc_2022-03">
+            <title>Compiler Support</title>
+            <p><b>Compiler information is for Build Capture only</b></p>
+            <ul>
+                <li>Running Coverity with Build Capture requires that your project employ a version
+                    of the compiler which is supported by Coverity. In this section, each table
+                    lists the supported compilers and versions for the language in question. Note
+                    that compiler support is not identical between Coverity on Polaris and standard
+                    Coverity.</li>
+                <li>If you don't plan to run Build Capture, compiler support is not relevant and the
+                    information in the Language Support table (just before this section) should be
+                    sufficient.</li>
+                <li>Build capture is not currently supported for macOS 12 and 13 on Apple
+                    Silicon.</li>
+            </ul>
+            <table id="table_rzz_pmy_b4b" frame="all">
+                <title><b>C/C++ Compiler Support</b></title>
+                <desc>Build capture for C/C++ source code is supported when the project uses any of
+                    the following compilers.</desc>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Supported Compilers</entry>
+                            <entry>Versions / Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>
+                                <p>FSF GCC 4.1.0–12.1.0</p>
+                            </entry>
+                            <entry morerows="2">
+                                <p><b>LLVM</b></p>
+                                <ul id="ul_szz_pmy_b4b">
+                                    <li>Clang compilers have various use limitations with Coverity
+                                        products, which are listed in the Coverity Analysis User and
+                                        Administrator Guide.</li>
+                                    <li>macOS: To ensure a complete capture, version 11–13 of Xcode
+                                        (with command line tools) must be installed. Also, ensure
+                                        that <codeph>xcodebuild -version</codeph> runs without
+                                        error; Coverity uses this command to check the Xcode
+                                        version.</li>
+                                    <li><b>Deprecation notice:</b> Support for LLVM Clang 7.0 is
+                                        deprecated as of 2023.6.0 and will be removed in a future
+                                        release.</li>
+                                </ul>
+                                <p><b>GCC </b></p>
+                                <ul id="ul_tzz_pmy_b4b">
+                                    <li>ISO/IEC TR 18037 fixed point extensions are supported for C
+                                        (not C++) code.</li>
+                                    <li>Versions of any of these compilers that are modified to
+                                        accept non-standard syntax are not supported.</li>
+                                    <li>GNU GCC compilers distributed with Apple Xcode are not
+                                        supported.</li>
+                                    <li><b>Deprecation notice:</b> Support for GNU GCC and g++ 4.0
+                                        prior to and including 4.7.0 are deprecated as of 2023.6.0
+                                        and will be removed in a future release.</li>
+                                </ul>
+                                <p><b>Android NDK Clang</b>
+                                </p>
+                                <ul id="ul_uzz_pmy_b4b">
+                                    <li>macOS: To ensure a complete capture, version 12–13 of Xcode
+                                        (with command line tools) must be installed. Also, ensure
+                                        that <codeph>xcodebuild -version</codeph> runs without
+                                        error; Coverity uses this command to check the Xcode
+                                        version.</li>
+                                </ul>
+                                <p><b>MSVC </b></p>
+                                <ul id="ul_vzz_pmy_b4b">
+                                    <li>Managed C++ and Common Language Runtime (CLR) are not
+                                        supported. Compilations with switches beginning with "/CLR"
+                                        will be skipped.</li>
+                                    
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>macOS on Intel</entry>
+                            <entry>
+                                <p>LLVM Clang 7.0–16.0</p>
+                                <p>Android NDK Clang 9.0.9–14.0.6 (NDK revisions r21e–r25b)</p>
+                                <p>FSF GCC 4.1.0–12.1.0</p>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>
+                                <p>FSF GCC 4.1.0–12.1.0</p>
+                                <p>Microsoft Visual C++ 2019-2022</p>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table id="table_xzz_pmy_b4b" frame="all">
+                <title><b>C# Compiler Support</b></title>
+                <desc>Build capture for C# source code is supported when the project uses any of the
+                    following compilers.</desc>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Supported Compilers</entry>
+                            <entry>Versions / Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>.NET 6.0-7.0</entry>
+                            <entry>
+                                <ul id="ul_edh_jyq_ftb">
+                                    <li>Linux 64-bit releases that support .NET 7. Coverity's C#
+                                        compiler depends on an included .NET 7 runtime.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>macOS on Intel</entry>
+                            <entry>Not supported </entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>
+                                <p>Visual Studio 2019, 2022</p>
+                                <p>.NET 6.0-7.0</p>
+                            </entry>
+                            <entry>
+                                <ul id="ul_yzz_pmy_b4b">
+                                    <li>Coverity Analysis for C# supports analysis of programs
+                                        compiled by the Visual C# compiler
+                                        (<codeph>csc.exe</codeph>) from .NET Framework versions 3.5
+                                        SP1 and 4.5.2–4.8.</li>
+                                    <li>Visual Studio Express editions are not supported.</li>
+                                    <li>Coverity supports analysis of Windows RT applications.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table id="table_b11_qmy_b4b" frame="all">
+                <title><b>Objective-C Compiler Support</b></title>
+                <desc>Build capture for Objective-C source code is supported when the project uses
+                    any of the following compilers.</desc>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Supported Compilers</entry>
+                            <entry>Versions / Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>Not supported</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>macOS on Intel</entry>
+                            <entry>LLVM Clang 7.0–16.0</entry>
+                            <entry>
+                                <ul id="ul_vdk_4zz_wwb">
+                                    <li>For information about supported platforms for Clang
+                                        compilers, see section "C/C++ Compilers Support".</li>
+                                    <li><b>Deprecation Notice:</b> Support for LLVM Clang 7.0 is
+                                        deprecated as of 2023.6.0 and will be removed in a future
+                                        release.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>Not supported</entry>
+                            <entry/>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table id="table_c11_qmy_b4b" frame="all">
+                <title><b>Go Compiler Support</b></title>
+                <desc>Build capture for Go source code is supported when the project uses any of the
+                    following compilers.</desc>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" rowsep="1" colsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" rowsep="1" colsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" rowsep="1" colsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Supported Compilers</entry>
+                            <entry>Versions / Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>Go compiler 1.19-1.20</entry>
+                            <entry morerows="2">
+                                <ul id="ul_d11_qmy_b4b">
+                                    <li>Coverity only supports projects that are built with the
+                                        following commands: go build, go install, go run, and go
+                                        test. Coverity does not support projects that are built by
+                                        invoking either go tool compile or gccgo directly.</li>
+                                    <li>Coverity does not directly recognize custom flags and
+                                        arguments of go run or go test. In order for Coverity to
+                                        recognize these custom flags and arguments, you must modify
+                                        config/templates/go/go_switches.dat.</li>
+                                    <li>The cov-emit-go command might have dependencies on external
+                                        tools, depending on the Go code being compiled. Refer to the
+                                        cov-emit-go command in the Coverity Command Reference for
+                                        details.</li>
+                                    <li>Build capture is not currently supported on macOS on Apple
+                                        Silicon.</li>
+                                    <li><b>Deprecation Notice:</b> Support for Go 1.19 is deprecated
+                                        as of 2023.6.0 and will be removed in a future release.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>macOS on Intel</entry>
+                            <entry>Go compiler 1.19-1.20</entry>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>Go compiler 1.19-1.20</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table id="table_f11_qmy_b4b" frame="all">
+                <title><b>Java Compiler Support</b></title>
+                <desc>Build capture for Java source code is supported when the project uses any of
+                    the following compilers.</desc>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Supported Compilers</entry>
+                            <entry>Versions / Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>
+                                <p>Oracle JDK 1.8, 11, 17, 19, 20</p>
+                                <p>OpenJDK 1.8, 11, 17, 19, 20</p>
+                            </entry>
+                            <entry morerows="2">
+                                <ul id="ul_g11_qmy_b4b">
+                                    <li>Coverity does not support Oracle JRockit JDK</li>
+                                    <li>macOS: To ensure a complete capture, version 11.x - 13.x of
+                                        Xcode (with command line tools) must be installed. Please
+                                        ensure `xcodebuild -version` runs without error; that
+                                        command is used by Coverity to check the version.</li>
+                                    <li>MacOS: Build capture is not currently supported on macOS on
+                                        Apple Silicon.</li>
+                                    <li>
+                                        <p>Attention: Partial support for Java 20 was added in
+                                            2023.6.0. Methods using features specific to Java 20 may
+                                            be elided by error recovery. Full support will be
+                                            implemented in a future release.</p>
+                                        <p>Important: Java preview features are not guaranteed to be
+                                            fully backwards compatible.</p>
+                                    </li>
+                                    <li><b>Deprecation Notice:</b> Support for Oracle/Open JDK 19 is
+                                        deprecated as of 2023.3.0 and will be removed in a future
+                                        release.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>macOS on Intel</entry>
+                            <entry>Oracle JDK 1.8, 11, 17, 19, 20</entry>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>
+                                <p>Oracle JDK 1.8, 11, 17, 19, 20</p>
+                                <p>OpenJDK 1.8, 11, 17, 19, 20</p>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table id="table_i11_qmy_b4b" frame="all">
+                <title><b>Kotlin Compiler Support</b></title>
+                <desc>Build capture for Kotlin source code is supported when the project uses any of
+                    the following compilers.</desc>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Supported Compilers</entry>
+                            <entry>Versions / Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>Kotlin 1.7.0-1.7.20, 1.8.0</entry>
+                            <entry morerows="2">
+                                <ul id="ul_j11_qmy_b4b">
+                                    <li>Coverity only supports Kotlin projects that are targeted to
+                                        JVM or Android, not other platforms. For multiplatform
+                                        projects, Coverity only captures Kotlin source files that
+                                        are targeted to the supported platforms.</li>
+                                    <li>macOS: To ensure a complete capture, version 11.x - 13.x of
+                                        Xcode (with command line tools) must be installed. Please
+                                        ensure `xcodebuild -version` runs without error; that
+                                        command is used by Coverity to check the version.</li>
+                                    <li><b>Deprecation Notice:</b> Support for Kotlin 1.7 is
+                                        deprecated as of Coverity 2023.3.0 and will be removed in a
+                                        future release.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>macOS on Intel</entry>
+                            <entry>Kotlin 1.7.0-1.7.20, 1.8.0</entry>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>Kotlin 1.7.0-1.7.20, 1.8.0</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table id="table_m11_qmy_44z" frame="all">
+                <title><b>Swift Compiler Support</b></title>
+                <desc>Build capture for Swift source code is supported when the project uses any of
+                    the following compilers.</desc>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Supported Compilers</entry>
+                            <entry>Versions / Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>Not Supported</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>macOS on Intel</entry>
+                            <entry>IDE: Xcode 12.5.x</entry>
+                            <entry>
+                                <ul id="ul_n11_qmy_b47">
+                                    <li>Cross-compilation using Mac Catalyst is not supported.</li>
+                                    <li>Coverity Analysis supports Swift compiler invocations via
+                                        xcodebuild. Swift Package Manager is not supported.</li>
+                                    <li>Build capture of Swift is supported internally with
+                                            <codeph>cov-emit-text</codeph>. Autocapture must be
+                                        disabled.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>
+                                <p>Not Supported</p>
+                            </entry>
+                            <entry> </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table id="table_m11_qmy_x4b" frame="all">
+                <title><b>Visual Basic Compiler Support</b></title>
+                <desc>Build capture for Visual Basic source code is supported when the project uses
+                    any of the following compilers.</desc>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colsep="1" rowsep="1" colwidth="1*"/>
+                    <colspec colnum="3" colname="col3" colsep="1" rowsep="1" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry>OS</entry>
+                            <entry>Supported Compilers</entry>
+                            <entry>Versions / Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Linux</entry>
+                            <entry>Not Supported</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>macOS on Intel</entry>
+                            <entry>Not Supported</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Windows</entry>
+                            <entry>
+                                <p>Visual Studio 2019-2022</p>
+                            </entry>
+                            <entry>
+                                <ul id="ul_dmr_wwg_cvb">
+                                    <li>Coverity Analysis for Visual Basic supports analysis of
+                                        programs compiled by the Visual Basic compiler
+                                            (<codeph>vbc.exe</codeph>) from .NET Framework versions
+                                        3.5 SP1 and 4.5.2–4.8.</li>
+                                    <li>Visual Studio Express editions are not supported.</li>
+                                </ul>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+    </refbody>
+</reference>
